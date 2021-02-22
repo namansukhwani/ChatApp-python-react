@@ -1,38 +1,177 @@
-.App {
+*{
+  box-sizing: border-box;
+}
+html,body,#root{
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  margin: 0px;
+  padding: 0px;
+  /* height: 100%  !important; */
+  display: grid;
+  background: #f4f4f8;
+  scroll-behavior: smooth;
+}
+
+/* For desktop: */
+.mr-right{
+  margin-right: 4px !important;
+  margin: 8px ;
+}
+.mr-left{
+  margin: 8px ;
+  margin-left: 4px !important;
+}
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
+  }
+  .mr-right{
+    margin-right: 0px;
+    margin: 2px ;
+  }
+  .mr-left{
+    margin-left: 0px;
+    margin: 2px ;
+  }
+  .chat-box{
+    display: none;
+  }
+}
+
+/* Main Clases */
+.main-container{
+  background: #f4f4f8;
+  min-height: auto;
+  max-height: auto;
+  max-width: 100%;
+  min-width: 100%;
+  width: 100%;
+  height: 100%; 
+  border-radius: 10px;
+  flex-direction: row;
+}
+.container{
+  flex: auto;
+  height: 97vh;
+}
+.heading{
+  flex: auto;
+  font-size: 18pt;
+  font-weight: bold;
+  text-align: center;
+  align-self: center;
+}
+.avatar{
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  vertical-align: middle;
+  object-fit: cover;
+}
+
+/* Chat List CSS */
+.chat-list{
+  background: #ffffff;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.chat-list-header{
+  flex-direction: row;
+  display: grid;
+  height: 50px;
+  backdrop-filter: blur(2px);
+}
+.header-item{
+  height: 50px;
+  display: flex;
+  justify-items:center;
+  align-items: center;
+}
+.header-button{
+  flex:auto;
+  justify-items: center;
+  align-self: center;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.chat-search{
+  flex-direction: row;
   display: flex;
-  flex-direction: column;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(2px);
+}
+.searchBar{
+  width: 90%;
+  height: 38px;
+  border-radius: 12px;
+  border: 0px;
+  background: #f4f4f8;
+  padding: 10pt;
+  font-size: 13pt;
+  backdrop-filter: blur(2px);
+}
+.searchBar:focus{
+  outline: 0px !important;
+}
+.searchBar::placeholder{
+  text-align: center;
+  vertical-align: middle;
+  font-size: medium;
+}
+.chat-item{
+  display: grid;
+  height: 70px;
+  margin-bottom: 3px;
+}
+.avatar-box{
+  display: flex;
+  grid-column: 1/1;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 10px;
+  padding-right: 3px;
+}
+.name-box{
+  grid-column: 2/18;
+  display: grid;
+  justify-content:start;
+  align-items: center;
+  padding: 10px;
+  padding-left: 2px;
+}
+.name-title{
+  font-size:13pt;
+  font-weight: bold;
+}
+.last-message{
+  margin-top: -14px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: smaller;
+  color: #979797;
 }
 
-.App-link {
-  color: #61dafb;
+
+/* Chat Box CSS */
+.chat-box{
+  background: #ffffff;
+  height: 100%;
+  border-radius: 10px ;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
