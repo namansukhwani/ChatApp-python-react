@@ -5,10 +5,11 @@ html,body,#root{
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
   margin: 0px;
   padding: 0px;
-  /* height: 100%  !important; */
+  height: 100%  !important;
   display: grid;
   background: #f4f4f8;
   scroll-behavior: smooth;
+  overflow: hidden;
 }
 
 /* For desktop: */
@@ -40,11 +41,17 @@ html,body,#root{
   }
   .mr-right{
     margin-right: 0px;
-    margin: 2px ;
+    margin: 0px !important;
   }
   .mr-left{
     margin-left: 0px;
-    margin: 2px ;
+    margin: 0px !important;
+  }
+  .container{
+    height: 100vh !important;
+  }
+  .chat-list{
+    border-radius: 0px !important;
   }
   .chat-box{
     display: none;
@@ -53,19 +60,20 @@ html,body,#root{
 
 /* Main Clases */
 .main-container{
-  background: #f4f4f8;
+  background:url('./assets/b1.jpg') no-repeat fixed;
+  /* background: #f4f4f8; */
+  background-size: cover;
   min-height: auto;
   max-height: auto;
   max-width: 100%;
   min-width: 100%;
   width: 100%;
   height: 100%; 
-  border-radius: 10px;
   flex-direction: row;
 }
 .container{
   flex: auto;
-  height: 97vh;
+  height: 98vh;
 }
 .heading{
   flex: auto;
@@ -84,16 +92,18 @@ html,body,#root{
 
 /* Chat List CSS */
 .chat-list{
-  background: #ffffff;
+  background: #ffffff99;
   height: 100%;
   border-radius: 10px;
   overflow: hidden;
+  backdrop-filter: blur(20px);
 }
 .chat-list-header{
   flex-direction: row;
   display: grid;
   height: 50px;
-  backdrop-filter: blur(2px);
+  position: relative;
+  backdrop-filter: blur(20px);
 }
 .header-item{
   height: 50px;
@@ -113,17 +123,20 @@ html,body,#root{
   height: 60px;
   justify-content: center;
   align-items: center;
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(10px);
+  position: relative;
+  top: 0px;
+  z-index: auto;
 }
 .searchBar{
   width: 90%;
   height: 38px;
   border-radius: 12px;
   border: 0px;
-  background: #f4f4f8;
+  /* background: #f4f4f8; */
+  backdrop-filter: blur(1px);
   padding: 10pt;
   font-size: 13pt;
-  backdrop-filter: blur(2px);
 }
 .searchBar:focus{
   outline: 0px !important;
@@ -137,21 +150,33 @@ html,body,#root{
   display: grid;
   height: 70px;
   margin-bottom: 3px;
+  position: relative;
+  margin: 10px;
+}
+.chat-item:hover{
+  /* background: #f4f4f8; */
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+
 }
 .avatar-box{
+  height: 70px;
+  width: 90px;
   display: flex;
-  grid-column: 1/1;
+  grid-column: 0/1;
   align-items: center;
   justify-content: center;
   padding: 10px;
   padding-right: 3px;
 }
 .name-box{
-  grid-column: 2/18;
+  grid-column: 2/100;
+  height: 70px;
+  width: 90%;
   display: grid;
   justify-content:start;
   align-items: center;
-  padding: 10px;
+  padding: 13px;
   padding-left: 2px;
 }
 .name-title{
@@ -166,12 +191,25 @@ html,body,#root{
   font-size: smaller;
   color: #979797;
 }
-
+.unread-circle{
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #077af4;
+  position: absolute;
+  top:28px;
+  right: 7%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10px;
+}
 
 /* Chat Box CSS */
 .chat-box{
-  background: #ffffff;
+  background: #ffffff99;
   height: 100%;
   border-radius: 10px ;
+  backdrop-filter: blur(20px);
 }
 
